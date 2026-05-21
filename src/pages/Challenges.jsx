@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle, Leaf, Trophy, ArrowRight } from 'lucide-react';
+import { challengesData } from '../data';
 
 const Challenges = () => {
   const [challenges, setChallenges] = useState([]);
@@ -8,16 +9,11 @@ const Challenges = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/challenges')
-      .then(res => res.json())
-      .then(data => {
-        setChallenges(data);
-        setLoading(false);
-      })
-      .catch(err => {
-        console.error('Failed to fetch challenges:', err);
-        setLoading(false);
-      });
+    // Simulate a brief loading state for UX
+    setTimeout(() => {
+      setChallenges(challengesData);
+      setLoading(false);
+    }, 500);
   }, []);
 
   const toggleChallenge = (id) => {

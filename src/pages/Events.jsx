@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Calendar, MapPin, Users, ArrowRight } from 'lucide-react';
+import { eventsData } from '../data';
 
 const Events = () => {
   const [events, setEvents] = useState([]);
@@ -20,16 +21,11 @@ const Events = () => {
   };
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/events')
-      .then(res => res.json())
-      .then(data => {
-        setEvents(data);
-        setLoading(false);
-      })
-      .catch(err => {
-        console.error('Failed to fetch events:', err);
-        setLoading(false);
-      });
+    // Simulate a brief loading state for UX
+    setTimeout(() => {
+      setEvents(eventsData);
+      setLoading(false);
+    }, 500);
   }, []);
 
   return (
