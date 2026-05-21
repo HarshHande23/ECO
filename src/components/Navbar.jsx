@@ -68,9 +68,10 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button 
               onClick={() => setIsOpen(!isOpen)}
-              className="text-slate-200 hover:text-emerald-400 focus:outline-none"
+              className="text-emerald-400 hover:text-emerald-300 focus:outline-none p-2 bg-emerald-500/10 rounded-lg border border-emerald-500/20 shadow-sm"
+              aria-label="Toggle mobile menu"
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
             </button>
           </div>
         </div>
