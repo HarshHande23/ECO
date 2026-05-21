@@ -1,3 +1,6 @@
+import imgBeachCleanup from './assets/images/beach_cleanup.png';
+import imgRecyclingWorkshop from './assets/images/recycling_workshop.png';
+
 export const challengesData = [
   { id: 1, title: 'Meatless Monday', description: 'Avoid eating meat for the entire day to reduce your carbon footprint.', points: 50 },
   { id: 2, title: 'Zero Waste Day', description: 'Try not to produce any non-recyclable waste today.', points: 100 },
@@ -6,8 +9,8 @@ export const challengesData = [
 ];
 
 export const eventsData = [
-  { id: 1, title: 'Community Beach Cleanup', date: '2026-06-05', location: 'Sunny Shore Beach', attendees: 45, image: 'https://images.unsplash.com/photo-1618477461853-cf6ed80fca4a?q=80&w=800&auto=format&fit=crop' },
+  { id: 1, title: 'Community Beach Cleanup', date: '2026-06-05', location: 'Sunny Shore Beach', attendees: 45, image: imgBeachCleanup },
   { id: 2, title: 'City Park Tree Planting', date: '2026-06-12', location: 'Central Park', attendees: 120, image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=800&auto=format&fit=crop' },
-  { id: 3, title: 'Recycling Workshop', date: '2026-06-20', location: 'Downtown Community Center', attendees: 30, image: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15f?q=80&w=800&auto=format&fit=crop' },
+  { id: 3, title: 'Recycling Workshop', date: '2026-06-20', location: 'Downtown Community Center', attendees: 30, image: imgRecyclingWorkshop },
   { id: 4, title: 'Farmers Market - Organic Special', date: '2026-06-25', location: 'Town Square', attendees: 200, image: 'https://images.unsplash.com/photo-1488459716781-31db52582fe9?q=80&w=800&auto=format&fit=crop' }
 ];

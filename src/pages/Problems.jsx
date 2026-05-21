@@ -2,14 +2,17 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Factory, Droplets, TreePine, ThermometerSun, Trash2, BatteryWarning } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import imgAirPollution from '../assets/images/air_pollution.png';
+import imgGlobalWarming from '../assets/images/global_warming.png';
+import imgPlasticWaste from '../assets/images/plastic_waste.png';
 
 const Problems = () => {
   const problems = [
-    { id: 1, title: 'Air Pollution', icon: <Factory />, desc: 'Emissions from industries and vehicles causing severe health and environmental impacts.', color: 'from-gray-400 to-gray-600' },
+    { id: 1, title: 'Air Pollution', icon: <Factory />, desc: 'Emissions from industries and vehicles causing severe health and environmental impacts.', color: 'from-gray-400 to-gray-600', image: imgAirPollution },
     { id: 2, title: 'Water Pollution', icon: <Droplets />, desc: 'Contamination of water bodies affecting marine life and human water supply.', color: 'from-blue-400 to-blue-600' },
     { id: 3, title: 'Deforestation', icon: <TreePine />, desc: 'Massive clearing of Earth\'s forests, destroying habitats and accelerating climate change.', color: 'from-green-400 to-green-600' },
-    { id: 4, title: 'Global Warming', icon: <ThermometerSun />, desc: 'The long-term heating of Earth\'s climate system observed since the pre-industrial period.', color: 'from-orange-400 to-red-500' },
-    { id: 5, title: 'Plastic Waste', icon: <Trash2 />, desc: 'Accumulation of plastic products in the environment that adversely affects wildlife.', color: 'from-teal-400 to-teal-600' },
+    { id: 4, title: 'Global Warming', icon: <ThermometerSun />, desc: 'The long-term heating of Earth\'s climate system observed since the pre-industrial period.', color: 'from-orange-400 to-red-500', image: imgGlobalWarming },
+    { id: 5, title: 'Plastic Waste', icon: <Trash2 />, desc: 'Accumulation of plastic products in the environment that adversely affects wildlife.', color: 'from-teal-400 to-teal-600', image: imgPlasticWaste },
     { id: 6, title: 'E-Waste', icon: <BatteryWarning />, desc: 'Discarded electronic appliances causing toxic heavy metal leakage into soil.', color: 'from-purple-400 to-purple-600' },
   ];
 
@@ -29,11 +32,22 @@ const Problems = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="glass-card relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300"
+            className="glass-card relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300 flex flex-col h-full"
           >
-            <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${prob.color}`} />
-            <div className="p-8">
-              <div className={`p-4 inline-block rounded-2xl bg-white/5 mb-6 text-white`}>
+            <div className={`absolute top-0 left-0 w-full h-1 z-10 bg-gradient-to-r ${prob.color}`} />
+            
+            {prob.image && (
+              <div className="h-48 w-full overflow-hidden shrink-0">
+                <img 
+                  src={prob.image} 
+                  alt={prob.title} 
+                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" 
+                />
+              </div>
+            )}
+            
+            <div className="p-8 flex flex-col flex-grow">
+              <div className={`p-4 inline-block rounded-2xl bg-white/5 mb-6 text-white self-start`}>
                 {React.cloneElement(prob.icon, { className: 'h-8 w-8' })}
               </div>
               <h2 className="text-2xl font-bold text-white mb-3">{prob.title}</h2>
