@@ -5,15 +5,16 @@ import { Link } from 'react-router-dom';
 import imgAirPollution from '../assets/images/air_pollution.png';
 import imgGlobalWarming from '../assets/images/global_warming.png';
 import imgPlasticWaste from '../assets/images/plastic_waste.png';
+import imgWaterPollution from '../assets/images/water_pollution.png';
 
 const Problems = () => {
   const problems = [
     { id: 1, title: 'Air Pollution', icon: <Factory />, desc: 'Emissions from industries and vehicles causing severe health and environmental impacts.', color: 'from-gray-400 to-gray-600', image: imgAirPollution },
-    { id: 2, title: 'Water Pollution', icon: <Droplets />, desc: 'Contamination of water bodies affecting marine life and human water supply.', color: 'from-blue-400 to-blue-600' },
-    { id: 3, title: 'Deforestation', icon: <TreePine />, desc: 'Massive clearing of Earth\'s forests, destroying habitats and accelerating climate change.', color: 'from-green-400 to-green-600' },
+    { id: 2, title: 'Water Pollution', icon: <Droplets />, desc: 'Contamination of water bodies affecting marine life and human water supply.', color: 'from-blue-400 to-blue-600', image: imgWaterPollution },
+    { id: 3, title: 'Deforestation', icon: <TreePine />, desc: 'Massive clearing of Earth\'s forests, destroying habitats and accelerating climate change.', color: 'from-green-400 to-green-600', image: 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?q=80&w=800&auto=format&fit=crop' },
     { id: 4, title: 'Global Warming', icon: <ThermometerSun />, desc: 'The long-term heating of Earth\'s climate system observed since the pre-industrial period.', color: 'from-orange-400 to-red-500', image: imgGlobalWarming },
     { id: 5, title: 'Plastic Waste', icon: <Trash2 />, desc: 'Accumulation of plastic products in the environment that adversely affects wildlife.', color: 'from-teal-400 to-teal-600', image: imgPlasticWaste },
-    { id: 6, title: 'E-Waste', icon: <BatteryWarning />, desc: 'Discarded electronic appliances causing toxic heavy metal leakage into soil.', color: 'from-purple-400 to-purple-600' },
+    { id: 6, title: 'E-Waste', icon: <BatteryWarning />, desc: 'Discarded electronic appliances causing toxic heavy metal leakage into soil.', color: 'from-purple-400 to-purple-600', image: 'https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?q=80&w=800&auto=format&fit=crop' },
   ];
 
   return (
